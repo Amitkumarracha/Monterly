@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HR Interview - Mentorly</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="/Code/Images_and_SVG/LOGO PNG.png" type="png" />
+  </head>
+
+  <script>
+    const checkboxes = document.querySelectorAll(".task");
+    const progressBar = document.getElementById("progressBar");
+    const progressText = document.getElementById("progressText");
+
+    function updateProgress() {
+      const total = checkboxes.length;
+      const checked = Array.from(checkboxes).filter((cb) => cb.checked).length;
+      const percent = Math.round((checked / total) * 100);
+      progressBar.style.width = percent + "%";
+      progressText.textContent = `${percent}% Complete`;
+    }
+
+    checkboxes.forEach((cb) => cb.addEventListener("change", updateProgress));
+  </script>
+
+  <body>
+    <!-- Logo -->
+    <div class="logo">
+       <a href="/Code/html ai/index.html"><img src="/Code/Images_and_SVG/Mentorlt LOGO.png" alt="Mentorly Logo" /></a>
+    </div>
+
+    <!-- Sticky Navbar -->
+    <nav class="navbar">
+      <div class="navbar-links">
+        <a href="/Rodmap/index_HR.html">ROADMAP</a>
+        <a href="/Code/pre/index.html">PREP PLANNER</a>
+        <a href="/Moke in/index.html">PRACTICE QUESTIONS</a>
+        <a href="/Moke in/02_index.html">MOCK INTERVIEWS</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2 class="heading animate-fade">AN HR INTERVIEW?</h2>
+
+      <div class="card animate-slide-up">
+        <p class="description">
+          An HR (Human Resources) interview is typically the final round in the
+          interview process, focused more on personality, communication, and
+          cultural fit rather than technical knowledge. It’s designed to
+          understand who you are as a person — your motivations, behavior,
+          attitude, and how well you’d fit into the company.
+        </p>
+
+        <h3 class="purpose-title">📝 Purpose of an HR Interview:</h3>
+        <ul class="points">
+          <li>
+            To assess your soft skills: communication, teamwork, leadership.
+          </li>
+          <li>To see if your values align with the company’s culture.</li>
+          <li>To test your stability, attitude, and willingness to learn.</li>
+          <li>
+            To verify what’s written on your resume (projects, internships,
+            achievements).
+          </li>
+          <li>
+            To check your career goals and if they align with the role offered.
+          </li>
+        </ul>
+
+        <div class="slogan animate-fade-up">
+          <strong>
+            CONFIDENCE IN WORDS, CHARACTER IN ACTION —<br />
+            CRACK YOUR HR INTERVIEW WITH CLARITY!
+          </strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Button -->
+    <button class="btn" id="menuToggle">
+      <span class="icon">
+        <svg viewBox="0 0 175 80" width="40" height="40">
+          <rect width="80" height="15" fill="#000" rx="10"></rect>
+          <rect y="30" width="80" height="15" fill="#000" rx="10"></rect>
+          <rect y="60" width="80" height="15" fill="#000" rx="10"></rect>
+        </svg>
+      </span>
+      <span class="text">MENU</span>
+    </button>
+
+    <!-- Sidebar Menu -->
+    <div id="sidebarMenu" class="sidebar">
+      <div class="close-btn" id="closeMenu">&times;</div>
+      <ul>
+        <li><a href="/Code/html ai/index.html">Home</a></li>
+        <li><a href="/Rodmap/index_HR.html">Roadmap</a></li>
+        <li><a href="/Code/Page2/index.html">Prep Planner</a></li>
+        <li><a href="/Moke in/index.html">Practice Questions</a></li>
+        <li><a href="/Moke in/02_index.html">Mock Interviews</a></li>
+        <li><a href="/Code/db/index.html">Progress Dashboard</a></li>
+      </ul>
+    </div>
+
+    <!-- Sidebar Script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const sidebarMenu = document.getElementById("sidebarMenu");
+        const closeMenu = document.getElementById("closeMenu");
+
+        let autoCloseTimeout;
+
+        const openSidebar = () => {
+          sidebarMenu.classList.add("open");
+          clearTimeout(autoCloseTimeout);
+          autoCloseTimeout = setTimeout(
+            () => sidebarMenu.classList.remove("open"),
+            3000
+          );
+        };
+
+        const closeSidebar = () => {
+          clearTimeout(autoCloseTimeout);
+          sidebarMenu.classList.remove("open");
+        };
+
+        menuToggle.addEventListener("click", openSidebar);
+        closeMenu.addEventListener("click", closeSidebar);
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeSidebar();
+        });
+
+        document.addEventListener("click", (e) => {
+          if (
+            !sidebarMenu.contains(e.target) &&
+            !menuToggle.contains(e.target)
+          ) {
+            closeSidebar();
+          }
+        });
+
+        const sidebarLinks = sidebarMenu.querySelectorAll("a");
+        sidebarLinks.forEach((link) =>
+          link.addEventListener("click", closeSidebar)
+        );
+      });
+    </script>
+  </body>
+</html>
