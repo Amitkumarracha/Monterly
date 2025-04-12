@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mentorly Landing Page</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/Code/Page2/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet" />
+  <link rel="icon" href="/Code/Images_and_SVG/LOGO PNG.png" type="png" />
+</head>
+
+<body>
+  <!-- Logo -->
+  <div class="logo">
+    <img src="/Code/Images_and_SVG/Mentorlt LOGO.png" alt="Mentorly Logo" />
+  </div>
+
+  <!-- Main Layout Wrapper -->
+  <div class="main-content">
+    <div class="title">FIRST STEP TOWARD YOUR JOB</div>
+    <div class="subtitle">Select the field You want to go for</div>
+
+    <!-- Dropdown -->
+    <div class="sec-center">
+      <input class="dropdown" type="checkbox" id="dropdown-toggle" hidden>
+      <label for="dropdown-toggle" class="for-dropdown">
+        Select your field
+        <i class="uil">&#9662;</i>
+      </label>
+      <div class="section-dropdown">
+        <a href="/Code/PAGE 3 hr/index.html">HR</a>
+        <a href="/Code/pg4/index.html">System Design </a>
+        <a href="/Code/pg04/index.html">DSA</a>
+      </div>
+    </div>
+
+  
+  <!-- Menu Button -->
+  <button class="btn" id="menuToggle">
+    <span class="icon">
+      <svg viewBox="0 0 175 80" width="40" height="40">
+        <rect width="80" height="15" fill="#000" rx="10"></rect>
+        <rect y="30" width="80" height="15" fill="#000" rx="10"></rect>
+        <rect y="60" width="80" height="15" fill="#000" rx="10"></rect>
+      </svg>
+    </span>
+    <span class="text">MENU</span>
+  </button>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebarMenu" class="sidebar">
+    <div class="close-btn" id="closeMenu">&times;</div>
+    <ul>
+      <li><a href="/Code/html ai/index.html">Home</a></li>
+      <li><a href="/Rodmap/index_HR.html">Roadmap</a></li>
+      <li><a href="/Code/pre/index.html">Prep Planner</a></li>
+      <li><a href="/Moke in/index.html">Practice Questions</a></li>
+      <li><a href="/Moke in/02_index.html">Mock Interviews</a></li>
+      <li><a href="#">Progress Dashboard</a></li>
+    </ul>
+  </div>
+
+  <!-- Sidebar Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuToggle = document.getElementById("menuToggle");
+      const sidebarMenu = document.getElementById("sidebarMenu");
+      const closeMenu = document.getElementById("closeMenu");
+
+      let autoCloseTimeout;
+
+      const openSidebar = () => {
+        sidebarMenu.classList.add("open");
+        clearTimeout(autoCloseTimeout);
+        autoCloseTimeout = setTimeout(() => sidebarMenu.classList.remove("open"), 3000);
+      };
+
+      const closeSidebar = () => {
+        clearTimeout(autoCloseTimeout);
+        sidebarMenu.classList.remove("open");
+      };
+
+      menuToggle.addEventListener("click", openSidebar);
+      closeMenu.addEventListener("click", closeSidebar);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeSidebar();
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sidebarMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          closeSidebar();
+        }
+      });
+
+      const sidebarLinks = sidebarMenu.querySelectorAll("a");
+      sidebarLinks.forEach(link => link.addEventListener("click", closeSidebar));
+    });
+  </script>
+</body>
+</html>
