@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Prep Planner – Land Your Dream Job</title>
+    <link rel="icon" href="/Code/Images_and_SVG/LOGO PNG.png" type="png" />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #0d1b2a;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 0 2rem 2rem 2rem;
+        min-height: 100vh;
+        background-image: radial-gradient(#13293d 1px, transparent 4px);
+        background-size: 40px 40px;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+
+      header {
+        background-color: #0f172a;
+        color: white;
+        padding: 1.5rem;
+        text-align: center;
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      h2 {
+        color: #0f172a;
+        text-align: center;
+      }
+
+      section {
+        margin-bottom: 2rem;
+        border-left: 5px solid #2563eb;
+        padding-left: 1rem;
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 1rem;
+      }
+
+      label {
+        font-weight: bold;
+        display: block;
+        margin-top: 1rem;
+      }
+
+      input[type="datetime-local"] {
+        padding: 0.5rem;
+        margin-top: 0.3rem;
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin-bottom: 1rem;
+      }
+
+      ul {
+        list-style-type: none;
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 0.8rem;
+      }
+
+      .task label {
+        display: flex;
+        align-items: center;
+      }
+
+      .task input[type="checkbox"] {
+        margin-right: 10px;
+        transform: scale(1.2);
+      }
+
+      .generate-btn {
+        background: #2563eb;
+        color: white;
+        font-weight: bold;
+        padding: 1rem;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        font-size: 1.1rem;
+        cursor: pointer;
+        margin-top: 1rem;
+      }
+
+      .generate-btn:hover {
+        background: #1e40af;
+      }
+
+      .summary {
+        background: #e0f2fe;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin-top: 2rem;
+        line-height: 1.6;
+        font-size: 1rem;
+      }
+
+      .summary strong {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+
+      .subheading {
+        font-weight: bold;
+        color: #1e3a8a;
+        margin-top: 1rem;
+      }
+
+      @media (max-width: 600px) {
+        input[type="datetime-local"] {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>📚 Ultimate Prep Planner – Get Job Ready</header>
+
+    <div class="container">
+      <h2>Plan Your Interview Prep + Track Every Task</h2>
+
+      <!-- TIMING SECTION -->
+      <section>
+        <h3>📅 Your Prep Timings</h3>
+        <label for="dsaTime">DSA Daily Slot:</label>
+        <input type="datetime-local" id="dsaTime" />
+        <label for="hrTime">HR Prep Slot:</label>
+        <input type="datetime-local" id="hrTime" />
+        <label for="sdTime">System Design Slot:</label>
+        <input type="datetime-local" id="sdTime" />
+      </section>
+
+      <!-- CHECKLIST SECTION -->
+      <section>
+        <h3>✅ DSA Checklist</h3>
+        <ul class="task">
+          <li>
+            <label
+              ><input type="checkbox" /> Arrays & Strings (Sliding Window, 2
+              Pointers)</label
+            >
+          </li>
+          <li>
+            <label><input type="checkbox" /> Binary Search + Recursion</label>
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Trees (Inorder, Postorder, BST)</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Graphs (BFS, DFS, Union Find)</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> DP (Knapsack, LIS, Memoization)</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Mock 2 Leetcode Questions Daily</label
+            >
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>✅ HR Interview Checklist</h3>
+        <ul class="task">
+          <li>
+            <label
+              ><input type="checkbox" /> Tell Me About Yourself – 90s
+              Pitch</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Strengths, Weaknesses, Goals</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> 3 STAR Stories for Past
+              Challenges</label
+            >
+          </li>
+          <li>
+            <label><input type="checkbox" /> Research Company & Role</label>
+          </li>
+          <li>
+            <label><input type="checkbox" /> Mock HR Interview with Peer</label>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>✅ System Design Checklist</h3>
+        <ul class="task">
+          <li>
+            <label><input type="checkbox" /> Learn Scalability Concepts</label>
+          </li>
+          <li>
+            <label><input type="checkbox" /> Caching, Load Balancing</label>
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Read High-Level Design Patterns</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Design: URL Shortener, Chat App</label
+            >
+          </li>
+          <li>
+            <label
+              ><input type="checkbox" /> Watch Gaurav Sen or Tech Dummies</label
+            >
+          </li>
+        </ul>
+      </section>
+
+      <!-- BUTTON -->
+      <button class="generate-btn" onclick="generateSummary()">
+        🎯 Generate My Plan Summary
+      </button>
+
+      <!-- SUMMARY -->
+      <div id="summary" class="summary"></div>
+    </div>
+
+    <script>
+      function formatTime(datetime) {
+        return new Date(datetime).toLocaleString("en-US", {
+          weekday: "short",
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
+      }
+
+      function generateSummary() {
+        const dsa = document.getElementById("dsaTime").value;
+        const hr = document.getElementById("hrTime").value;
+        const sd = document.getElementById("sdTime").value;
+
+        const summary = document.getElementById("summary");
+
+        if (!dsa || !hr || !sd) {
+          summary.innerHTML = `<strong style="color:red;">⚠️ Fill in your daily time slots for a proper plan.</strong>`;
+          return;
+        }
+
+        summary.innerHTML = `
+        <strong>🗓️ Your Custom Schedule:</strong>
+        <div><span class="subheading">DSA:</span> ${formatTime(dsa)}</div>
+        <div><span class="subheading">HR Interview Prep:</span> ${formatTime(
+          hr
+        )}</div>
+        <div><span class="subheading">System Design:</span> ${formatTime(
+          sd
+        )}</div>
+
+        <br><strong>📌 Remember:</strong> Stick to your time blocks and track progress daily. Completing this checklist = Interview Success 🚀.
+      `;
+      }
+    </script>
+  </body>
+</html>
